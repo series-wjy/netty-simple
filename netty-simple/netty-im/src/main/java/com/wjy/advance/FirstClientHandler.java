@@ -46,7 +46,7 @@ public class FirstClientHandler extends ChannelInboundHandlerAdapter {
         System.out.println("====>> maxCapacity：" + slice.maxCapacity());
 
         // 2.写数据
-        ctx.channel().writeAndFlush(byteBuf).sync();
+        ctx.channel().writeAndFlush(byteBuf);
 
         //byteBuf.resetReaderIndex();
         System.out.println("readerIndex：" + byteBuf.readerIndex());

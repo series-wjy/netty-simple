@@ -2,9 +2,12 @@
  * Copyright (c) Travelsky Corp.
  * All Rights Reserved.
  */
-package com.wjy.im.client;
+package com.wjy.im2.client;
 
-import com.wjy.im.client.handler.ClientMessageHandler;
+import com.wjy.im2.client.handler.LoginResponseHandler;
+import com.wjy.im2.client.handler.MessageResponseHandler;
+import com.wjy.im2.coder.PacketDecoder;
+import com.wjy.im2.coder.PacketEncoder;
 import com.wjy.protocol.packet.codec.PacketCodec;
 import com.wjy.protocol.packet.impl.MessageRequestPacket;
 import com.wjy.util.LoginUtil;
@@ -38,7 +41,10 @@ public class IMessageClient {
                 .handler(new ChannelInitializer<SocketChannel>() {
                     @Override
                     protected void initChannel(SocketChannel ch) throws Exception {
-                        ch.pipeline().addLast(new ClientMessageHandler());
+                        ch.pipeline().addLast(new PacketDecoder());
+                        ch.pipeline().addLast(new LoginResponseHandler());
+                        ch.pipeline().addLast(new MessageResponseHandler());
+                        ch.pipeline().addLast(new PacketEncoder());
                     }
                 });
         bootstrap.connect("127.0.0.1", 8000).addListener(future -> {

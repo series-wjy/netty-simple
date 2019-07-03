@@ -8,6 +8,8 @@ import com.wjy.protocol.packet.Packet;
 import com.wjy.protocol.packet.codec.PacketCodec;
 import com.wjy.protocol.packet.impl.LoginRequestPacket;
 import com.wjy.protocol.packet.impl.LoginResponsePacket;
+import com.wjy.protocol.packet.impl.MessageRequestPacket;
+import com.wjy.protocol.packet.impl.MessageResponsePacket;
 import io.netty.buffer.ByteBuf;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.ChannelInboundHandlerAdapter;
@@ -38,6 +40,14 @@ public class ServerMessageHandler extends ChannelInboundHandlerAdapter {
             }
 
             ByteBuf response = PacketCodec.getInstance().encode(loginResponsePacket);
+            ctx.channel().writeAndFlush(response);
+        } else if(packet instanceof MessageRequestPacket) {
+            MessageRequestPacket messageRequestPacket = (MessageRequestPacket) packet;
+            System.out.println(new Date() + "：服务端收到消息[" + messageRequestPacket.getMsg() + "]");
+
+            MessageResponsePacket messageResponsePacket = new MessageResponsePacket();
+            messageResponsePacket.setMsg(messageRequestPacket.getMsg());
+            ByteBuf response = PacketCodec.getInstance().encode(messageResponsePacket);
             ctx.channel().writeAndFlush(response);
         }
     }

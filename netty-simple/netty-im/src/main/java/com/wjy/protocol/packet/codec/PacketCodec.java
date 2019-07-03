@@ -4,11 +4,13 @@
  */
 package com.wjy.protocol.packet.codec;
 
-import com.wjy.protocol.packet.impl.LoginResponsePacket;
-import com.wjy.protocol.serialize.impl.JSONSerializer;
-import com.wjy.protocol.serialize.Serializer;
 import com.wjy.protocol.packet.Packet;
 import com.wjy.protocol.packet.impl.LoginRequestPacket;
+import com.wjy.protocol.packet.impl.LoginResponsePacket;
+import com.wjy.protocol.packet.impl.MessageRequestPacket;
+import com.wjy.protocol.packet.impl.MessageResponsePacket;
+import com.wjy.protocol.serialize.Serializer;
+import com.wjy.protocol.serialize.impl.JSONSerializer;
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.ByteBufAllocator;
 
@@ -17,6 +19,8 @@ import java.util.Map;
 
 import static com.wjy.protocol.command.Command.LOGIN_REQUEST;
 import static com.wjy.protocol.command.Command.LOGIN_RESPONSE;
+import static com.wjy.protocol.command.Command.MESSAGE_REQUEST;
+import static com.wjy.protocol.command.Command.MESSAGE_RESPONSE;
 
 /**
  * @author wangjiayou 2019/7/1
@@ -45,6 +49,8 @@ public class PacketCodec {
         packetTypeMap = new HashMap<>();
         packetTypeMap.put(LOGIN_REQUEST, LoginRequestPacket.class);
         packetTypeMap.put(LOGIN_RESPONSE, LoginResponsePacket.class);
+        packetTypeMap.put(MESSAGE_REQUEST, MessageRequestPacket.class);
+        packetTypeMap.put(MESSAGE_RESPONSE, MessageResponsePacket.class);
 
         serializerMap = new HashMap<>();
         Serializer serializer = new JSONSerializer();
