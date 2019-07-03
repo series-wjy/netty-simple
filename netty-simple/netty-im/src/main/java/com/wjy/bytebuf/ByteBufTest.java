@@ -1,4 +1,4 @@
-package com.wjy.im;
+package com.wjy.bytebuf;
 
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.ByteBufAllocator;

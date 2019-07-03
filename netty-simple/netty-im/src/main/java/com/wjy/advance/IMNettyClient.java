@@ -2,7 +2,7 @@
  * Copyright (c) Travelsky Corp.
  * All Rights Reserved.
  */
-package com.wjy.im;
+package com.wjy.advance;
 
 import io.netty.bootstrap.Bootstrap;
 import io.netty.channel.ChannelInitializer;
