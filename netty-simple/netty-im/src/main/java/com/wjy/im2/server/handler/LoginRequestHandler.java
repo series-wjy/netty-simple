@@ -29,6 +29,7 @@ public class LoginRequestHandler extends SimpleChannelInboundHandler<LoginReques
             loginResponsePacket.setReason("账号或密码效验失败！");
         }
         ctx.channel().writeAndFlush(loginResponsePacket);
+        ctx.channel().write(loginResponsePacket);
     }
 
     private boolean valid(LoginRequestPacket packet) {

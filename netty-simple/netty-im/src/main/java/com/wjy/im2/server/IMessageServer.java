@@ -14,6 +14,7 @@ import io.netty.channel.ChannelOption;
 import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.nio.NioServerSocketChannel;
 import io.netty.channel.socket.nio.NioSocketChannel;
+import io.netty.handler.codec.LengthFieldBasedFrameDecoder;
 
 import java.util.Date;
 
@@ -36,6 +37,7 @@ public class IMessageServer {
                 .childHandler(new ChannelInitializer<NioSocketChannel>() {
                     @Override
                     protected void initChannel(NioSocketChannel ch) throws Exception {
+                        ch.pipeline().addLast(new LengthFieldBasedFrameDecoder(12, 7,4));
                         ch.pipeline().addLast(new PacketDecoder());
                         ch.pipeline().addLast(new LoginRequestHandler());
                         ch.pipeline().addLast(new MessageRequestHandler());
@@ -45,6 +47,7 @@ public class IMessageServer {
         serverBootstrap.bind(8000).addListener(future -> {
             if(future.isSuccess()) {
                 System.out.println(new Date() + "：绑定端口[8000]成功！");
+                //bossGroup.scheduleAtFixedRate();
             } else {
                 System.out.println(new Date() + "：绑定端口[8000]失败！");
             }
