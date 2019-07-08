@@ -6,6 +6,7 @@ package com.wjy.im2.server;
 
 import com.wjy.im2.coder.PacketDecoder;
 import com.wjy.im2.coder.PacketEncoder;
+import com.wjy.im2.server.handler.AuthHandler;
 import com.wjy.im2.server.handler.LoginRequestHandler;
 import com.wjy.im2.server.handler.MessageRequestHandler;
 import io.netty.bootstrap.ServerBootstrap;
@@ -37,9 +38,13 @@ public class IMessageServer {
                 .childHandler(new ChannelInitializer<NioSocketChannel>() {
                     @Override
                     protected void initChannel(NioSocketChannel ch) throws Exception {
-                        ch.pipeline().addLast(new LengthFieldBasedFrameDecoder(12, 7,4));
+                        //ch.pipeline().addLast(new LifeCyCleTestHandler());
+                        ch.pipeline().addLast(new LengthFieldBasedFrameDecoder(Integer.MAX_VALUE, 7,4));
                         ch.pipeline().addLast(new PacketDecoder());
                         ch.pipeline().addLast(new LoginRequestHandler());
+
+                        // 用户登录验证
+                        ch.pipeline().addLast(new AuthHandler());
                         ch.pipeline().addLast(new MessageRequestHandler());
                         ch.pipeline().addLast(new PacketEncoder());
                     }

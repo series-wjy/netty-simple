@@ -19,7 +19,9 @@ public class MessageResponseHandler extends SimpleChannelInboundHandler<MessageR
     @Override
     protected void channelRead0(ChannelHandlerContext ctx, MessageResponsePacket msg) throws Exception {
         if(!StringUtil.isNullOrEmpty(msg.getMsg())) {
-            System.out.println(new Date() + "：收到服务器消息回复：[" + msg.getMsg() + "]");
+            String fromUserId = msg.getFromUserId();
+            String fromUserName = msg.getFromUserName();
+            System.out.println(new Date() + "：" + fromUserId + "：" + fromUserName + "：[" + msg.getMsg() + "]");
         }
     }
 }

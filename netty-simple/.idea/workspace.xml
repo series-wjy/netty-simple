@@ -2,10 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="55ff59c2-04d7-4fa0-a7f6-175199e50423" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/netty-im/src/main/java/com/wjy/im2/server/handler/AuthHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/netty-im/src/main/java/com/wjy/im2/server/handler/LifeCyCleTestHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/netty-im/src/main/java/com/wjy/im2/session/Session.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/netty-im/src/main/java/com/wjy/im2/session/SessionUtil.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/netty-im/src/main/java/com/wjy/im2/client/IMessageClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/netty-im/src/main/java/com/wjy/im2/client/IMessageClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/netty-im/src/main/java/com/wjy/im2/client/handler/LoginResponseHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/netty-im/src/main/java/com/wjy/im2/client/handler/LoginResponseHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/netty-im/src/main/java/com/wjy/im2/client/handler/MessageResponseHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/netty-im/src/main/java/com/wjy/im2/client/handler/MessageResponseHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/netty-im/src/main/java/com/wjy/im2/server/IMessageServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/netty-im/src/main/java/com/wjy/im2/server/IMessageServer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/netty-im/src/main/java/com/wjy/im2/server/handler/LoginRequestHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/netty-im/src/main/java/com/wjy/im2/server/handler/LoginRequestHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/netty-im/src/main/java/com/wjy/im2/server/handler/MessageRequestHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/netty-im/src/main/java/com/wjy/im2/server/handler/MessageRequestHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/netty-im/src/main/java/com/wjy/protocol/packet/impl/LoginResponsePacket.java" beforeDir="false" afterPath="$PROJECT_DIR$/netty-im/src/main/java/com/wjy/protocol/packet/impl/LoginResponsePacket.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/netty-im/src/main/java/com/wjy/protocol/packet/impl/MessageRequestPacket.java" beforeDir="false" afterPath="$PROJECT_DIR$/netty-im/src/main/java/com/wjy/protocol/packet/impl/MessageRequestPacket.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/netty-im/src/main/java/com/wjy/protocol/packet/impl/MessageResponsePacket.java" beforeDir="false" afterPath="$PROJECT_DIR$/netty-im/src/main/java/com/wjy/protocol/packet/impl/MessageResponsePacket.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/netty-im/src/main/java/com/wjy/util/Attributes.java" beforeDir="false" afterPath="$PROJECT_DIR$/netty-im/src/main/java/com/wjy/util/Attributes.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -27,11 +38,120 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/netty-im/src/main/java/com/wjy/im2/server/IMessageServer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="268">
-              <caret line="41" column="73" lean-forward="true" selection-start-line="41" selection-start-column="73" selection-end-line="41" selection-end-column="73" />
+            <state relative-caret-position="182">
+              <caret line="53" column="62" lean-forward="true" selection-start-line="53" selection-start-column="62" selection-end-line="53" selection-end-column="62" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/netty-im/src/main/java/com/wjy/im2/server/handler/AuthHandler.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="72">
+              <caret line="17" column="22" selection-start-line="17" selection-start-column="22" selection-end-line="17" selection-end-column="22" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/netty-im/src/main/java/com/wjy/im2/client/handler/MessageResponseHandler.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="340">
+              <caret line="23" column="86" selection-start-line="23" selection-start-column="86" selection-end-line="23" selection-end-column="86" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/netty-im/src/main/java/com/wjy/im2/server/handler/LoginRequestHandler.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="93">
+              <caret line="23" selection-start-line="23" selection-end-line="23" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#1548#1549#0" expanded="true" />
+                <element signature="e#1613#1614#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/netty-im/src/main/java/com/wjy/im2/server/handler/MessageRequestHandler.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="93">
+              <caret line="38" selection-start-line="38" selection-end-line="38" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="jar://$USER_HOME$/.m2/repository/io/netty/netty-all/4.1.6.Final/netty-all-4.1.6.Final-sources.jar!/io/netty/channel/SimpleChannelInboundHandler.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="51">
+              <caret line="107" selection-start-line="107" selection-end-line="107" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="jar://$USER_HOME$/.m2/repository/io/netty/netty-all/4.1.6.Final/netty-all-4.1.6.Final-sources.jar!/io/netty/channel/AbstractChannelHandlerContext.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="93">
+              <caret line="351" selection-start-line="351" selection-end-line="351" />
+              <folding>
+                <element signature="e#4727#4728#0" expanded="true" />
+                <element signature="e#4783#4784#0" expanded="true" />
+                <element signature="e#23389#23390#0" expanded="true" />
+                <element signature="e#23436#23437#0" expanded="true" />
+                <element signature="e#26982#26983#0" expanded="true" />
+                <element signature="e#27037#27038#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/netty-im/src/main/java/com/wjy/im2/session/SessionUtil.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="214">
+              <caret line="53" selection-start-line="53" selection-end-line="53" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#1309#1310#0" expanded="true" />
+                <element signature="e#1503#1504#0" expanded="true" />
+                <element signature="e#1548#1549#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="jar://$USER_HOME$/.m2/repository/io/netty/netty-all/4.1.6.Final/netty-all-4.1.6.Final-sources.jar!/io/netty/handler/codec/ByteToMessageDecoder.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="93">
+              <caret line="267" selection-start-line="267" selection-end-line="267" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/netty-im/src/main/java/com/wjy/im2/client/IMessageClient.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="93">
+              <caret line="85" column="26" selection-start-line="85" selection-start-column="26" selection-end-line="85" selection-end-column="26" />
             </state>
           </provider>
         </entry>
@@ -57,10 +177,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/netty-im/src/main/java/com/wjy/im/FirstClientHandler.java" />
-        <option value="$PROJECT_DIR$/netty-im/src/main/java/com/wjy/im/ByteBufTest.java" />
-        <option value="$PROJECT_DIR$/netty-im/src/main/java/com/wjy/protocol/Packet.java" />
-        <option value="$PROJECT_DIR$/netty-im/src/main/java/com/wjy/protocol/Command.java" />
         <option value="$PROJECT_DIR$/netty-im/src/main/java/com/wjy/protocol/LoginRequestPacket.java" />
         <option value="$PROJECT_DIR$/netty-im/src/main/java/com/wjy/protocol/SerializeerAlgorithm.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
@@ -77,12 +193,8 @@
         <option value="$PROJECT_DIR$/netty-im/src/main/java/com/wjy/userprotocol/serialize/impl/JSONSerializer.java" />
         <option value="$PROJECT_DIR$/netty-im/src/main/java/com/wjy/im/server/IMessageServer.java" />
         <option value="$PROJECT_DIR$/netty-im/src/main/java/com/wjy/userprotocol/packet/impl/LoginRequestPacket.java" />
-        <option value="$PROJECT_DIR$/netty-im/src/main/java/com/wjy/protocol/packet/impl/LoginResponsePacket.java" />
         <option value="$PROJECT_DIR$/netty-im/src/main/java/com/wjy/protocol/command/Command.java" />
-        <option value="$PROJECT_DIR$/netty-im/src/main/java/com/wjy/protocol/packet/impl/MessageRequestPacket.java" />
-        <option value="$PROJECT_DIR$/netty-im/src/main/java/com/wjy/protocol/packet/impl/MessageResponsePacket.java" />
         <option value="$PROJECT_DIR$/netty-im/src/main/java/com/wjy/im/server/handler/ServerMessageHandler.java" />
-        <option value="$PROJECT_DIR$/netty-im/src/main/java/com/wjy/util/Attributes.java" />
         <option value="$PROJECT_DIR$/netty-im/src/main/java/com/wjy/util/LoginUtil.java" />
         <option value="$PROJECT_DIR$/netty-im/src/main/java/com/wjy/im/client/IMessageClient.java" />
         <option value="$PROJECT_DIR$/netty-im/src/main/java/com/wjy/im/client/handler/ClientMessageHandler.java" />
@@ -97,17 +209,25 @@
         <option value="$PROJECT_DIR$/netty-im/src/main/java/com/wjy/protocol/packet/codec/PacketCodec.java" />
         <option value="$PROJECT_DIR$/netty-im/src/main/java/com/wjy/im2/coder/PacketEncoder.java" />
         <option value="$PROJECT_DIR$/netty-im/src/main/java/com/wjy/im2/coder/PacketDecoder.java" />
-        <option value="$PROJECT_DIR$/netty-im/src/main/java/com/wjy/im2/client/handler/MessageResponseHandler.java" />
-        <option value="$PROJECT_DIR$/netty-im/src/main/java/com/wjy/im2/server/handler/MessageRequestHandler.java" />
-        <option value="$PROJECT_DIR$/netty-im/src/main/java/com/wjy/im2/client/handler/LoginResponseHandler.java" />
         <option value="$PROJECT_DIR$/netty-im/src/main/java/com/wjy/unpack/FirstClientHandler.java" />
         <option value="$PROJECT_DIR$/netty-im/src/main/java/com/wjy/unpack/UnpackServerHandler.java" />
         <option value="$PROJECT_DIR$/netty-im/src/main/java/com/wjy/unpack/UnpackClient.java" />
         <option value="$PROJECT_DIR$/netty-im/src/main/java/com/wjy/unpack/UnpackClientHandler.java" />
         <option value="$PROJECT_DIR$/netty-im/src/main/java/com/wjy/unpack/UnpackServer.java" />
-        <option value="$PROJECT_DIR$/netty-im/src/main/java/com/wjy/im2/client/IMessageClient.java" />
-        <option value="$PROJECT_DIR$/netty-im/src/main/java/com/wjy/im2/server/handler/LoginRequestHandler.java" />
+        <option value="$PROJECT_DIR$/netty-im/src/main/java/com/wjy/im2/server/handler/LifeCyCleTestHandler.java" />
         <option value="$PROJECT_DIR$/netty-im/src/main/java/com/wjy/im2/server/IMessageServer.java" />
+        <option value="$PROJECT_DIR$/netty-im/src/main/java/com/wjy/im2/session/Session.java" />
+        <option value="$PROJECT_DIR$/netty-im/src/main/java/com/wjy/util/Attributes.java" />
+        <option value="$PROJECT_DIR$/netty-im/src/main/java/com/wjy/im2/session/SessionUtil.java" />
+        <option value="$PROJECT_DIR$/netty-im/src/main/java/com/wjy/protocol/packet/impl/MessageResponsePacket.java" />
+        <option value="$PROJECT_DIR$/netty-im/src/main/java/com/wjy/im2/server/handler/MessageRequestHandler.java" />
+        <option value="$PROJECT_DIR$/netty-im/src/main/java/com/wjy/im2/client/handler/MessageResponseHandler.java" />
+        <option value="$PROJECT_DIR$/netty-im/src/main/java/com/wjy/protocol/packet/impl/LoginResponsePacket.java" />
+        <option value="$PROJECT_DIR$/netty-im/src/main/java/com/wjy/protocol/packet/impl/MessageRequestPacket.java" />
+        <option value="$PROJECT_DIR$/netty-im/src/main/java/com/wjy/im2/server/handler/LoginRequestHandler.java" />
+        <option value="$PROJECT_DIR$/netty-im/src/main/java/com/wjy/im2/client/handler/LoginResponseHandler.java" />
+        <option value="$PROJECT_DIR$/netty-im/src/main/java/com/wjy/im2/client/IMessageClient.java" />
+        <option value="$PROJECT_DIR$/netty-im/src/main/java/com/wjy/im2/server/handler/AuthHandler.java" />
       </list>
     </option>
   </component>
@@ -148,7 +268,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -199,38 +318,6 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="wjy" type="462c0819:PsiDirectoryNode" />
-              <item name="im" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="netty-simple" type="b2602c69:ProjectViewProjectNode" />
-              <item name="netty-simple" type="462c0819:PsiDirectoryNode" />
-              <item name="netty-im" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="wjy" type="462c0819:PsiDirectoryNode" />
-              <item name="im" type="462c0819:PsiDirectoryNode" />
-              <item name="client" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="netty-simple" type="b2602c69:ProjectViewProjectNode" />
-              <item name="netty-simple" type="462c0819:PsiDirectoryNode" />
-              <item name="netty-im" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="wjy" type="462c0819:PsiDirectoryNode" />
-              <item name="im" type="462c0819:PsiDirectoryNode" />
-              <item name="server" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="netty-simple" type="b2602c69:ProjectViewProjectNode" />
-              <item name="netty-simple" type="462c0819:PsiDirectoryNode" />
-              <item name="netty-im" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="wjy" type="462c0819:PsiDirectoryNode" />
               <item name="im2" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -253,7 +340,8 @@
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="wjy" type="462c0819:PsiDirectoryNode" />
               <item name="im2" type="462c0819:PsiDirectoryNode" />
-              <item name="coder" type="462c0819:PsiDirectoryNode" />
+              <item name="client" type="462c0819:PsiDirectoryNode" />
+              <item name="handler" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="netty-simple" type="b2602c69:ProjectViewProjectNode" />
@@ -265,6 +353,29 @@
               <item name="wjy" type="462c0819:PsiDirectoryNode" />
               <item name="im2" type="462c0819:PsiDirectoryNode" />
               <item name="server" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="netty-simple" type="b2602c69:ProjectViewProjectNode" />
+              <item name="netty-simple" type="462c0819:PsiDirectoryNode" />
+              <item name="netty-im" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="wjy" type="462c0819:PsiDirectoryNode" />
+              <item name="im2" type="462c0819:PsiDirectoryNode" />
+              <item name="server" type="462c0819:PsiDirectoryNode" />
+              <item name="handler" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="netty-simple" type="b2602c69:ProjectViewProjectNode" />
+              <item name="netty-simple" type="462c0819:PsiDirectoryNode" />
+              <item name="netty-im" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="wjy" type="462c0819:PsiDirectoryNode" />
+              <item name="im2" type="462c0819:PsiDirectoryNode" />
+              <item name="session" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="netty-simple" type="b2602c69:ProjectViewProjectNode" />
@@ -297,23 +408,14 @@
               <item name="wjy" type="462c0819:PsiDirectoryNode" />
               <item name="protocol" type="462c0819:PsiDirectoryNode" />
               <item name="packet" type="462c0819:PsiDirectoryNode" />
-              <item name="codec" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="netty-simple" type="b2602c69:ProjectViewProjectNode" />
-              <item name="netty-simple" type="462c0819:PsiDirectoryNode" />
-              <item name="netty-im" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="wjy" type="462c0819:PsiDirectoryNode" />
-              <item name="unpack" type="462c0819:PsiDirectoryNode" />
+              <item name="impl" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
       <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -330,16 +432,16 @@
     <property name="settings.editor.selected.configurable" value="editor.preferences.import" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\data\netty\netty-simple\netty-im\src\main\java\com\wjy\" />
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\data\netty\netty-simple\netty-im\src\main\java\com\wjy\unpack" />
+      <recent name="D:\data\netty\netty-simple\netty-im\src\main\java\com\wjy\im2" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.wjy.advance" />
       <recent name="com.wjy.protocol.packet.impl" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\data\netty\netty-simple\netty-im\src\main\java\com\wjy\unpack" />
-      <recent name="D:\data\netty\netty-simple\netty-im\src\main\java\com\wjy\im2" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\data\netty\netty-simple\netty-im\src\main\java\com\wjy\" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -368,7 +470,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="IMessageClient (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+    <configuration name="IMessageClient (1)" type="Application" factoryName="Application" singleton="false" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.wjy.im2.client.IMessageClient" />
       <module name="netty-im" />
       <extension name="coverage">
@@ -420,10 +522,17 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Application.IMessageClient (1)" />
+      <item itemvalue="Application.IMessageServer (1)" />
+      <item itemvalue="Application.IMNettyServer" />
+      <item itemvalue="Application.UnpackClient" />
+      <item itemvalue="Application.UnpackServer" />
+    </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.IMessageServer (1)" />
         <item itemvalue="Application.IMessageClient (1)" />
+        <item itemvalue="Application.IMessageServer (1)" />
         <item itemvalue="Application.UnpackClient" />
         <item itemvalue="Application.UnpackServer" />
         <item itemvalue="Application.IMNettyServer" />
@@ -452,7 +561,8 @@
       <workItem from="1562028133220" duration="7546000" />
       <workItem from="1562115142412" duration="10039000" />
       <workItem from="1562221869688" duration="5803000" />
-      <workItem from="1562286617896" duration="8967000" />
+      <workItem from="1562286617896" duration="8996000" />
+      <workItem from="1562554001633" duration="8534000" />
     </task>
     <task id="LOCAL-00001" summary="提交">
       <created>1561540966714</created>
@@ -489,11 +599,18 @@
       <option name="project" value="LOCAL" />
       <updated>1562230773927</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="提交">
+      <created>1562318063225</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1562318063225</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="73699000" />
+    <option name="totallyTimeSpent" value="82262000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -503,19 +620,19 @@
       <window_info id="UI Designer" order="2" />
       <window_info id="Favorites" order="3" sideWeight="0.5033003" side_tool="true" weight="0.24924242" />
       <window_info id="Designer" order="4" />
-      <window_info active="true" content_ui="combo" id="Project" order="5" sideWeight="0.5561056" visible="true" weight="0.24924242" />
+      <window_info content_ui="combo" id="Project" order="5" sideWeight="0.5561056" visible="true" weight="0.30227274" />
       <window_info id="Structure" order="6" sideWeight="0.4438944" side_tool="true" weight="0.24924242" />
       <window_info anchor="bottom" id="Docker" order="0" show_stripe_button="false" />
       <window_info anchor="bottom" id="CheckStyle" order="1" />
       <window_info anchor="bottom" id="Event Log" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Database Changes" order="3" />
-      <window_info anchor="bottom" id="Messages" order="4" weight="0.32838285" />
+      <window_info anchor="bottom" id="Messages" order="4" weight="0.27887788" />
       <window_info anchor="bottom" id="Version Control" order="5" weight="0.32838285" />
       <window_info anchor="bottom" id="Terminal" order="6" />
       <window_info anchor="bottom" id="Message" order="7" />
       <window_info anchor="bottom" id="Find" order="8" weight="0.32838285" />
-      <window_info anchor="bottom" id="Run" order="9" weight="0.6980198" />
-      <window_info anchor="bottom" id="Debug" order="10" weight="0.37128714" />
+      <window_info anchor="bottom" id="Run" order="9" weight="0.42079207" />
+      <window_info anchor="bottom" id="Debug" order="10" weight="0.45049506" />
       <window_info anchor="bottom" id="Cvs" order="11" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="12" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="13" />
@@ -578,119 +695,16 @@
           <properties />
           <option name="timeStamp" value="3" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/netty-im/src/main/java/com/wjy/im2/server/handler/MessageRequestHandler.java</url>
+          <line>38</line>
+          <properties />
+          <option name="timeStamp" value="11" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/netty-im/src/main/java/com/wjy/advance/IMNettyClient.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="333">
-          <caret line="26" column="58" selection-start-line="26" selection-start-column="58" selection-end-line="26" selection-end-column="58" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/netty-im/src/main/java/com/wjy/advance/IMNettyServer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="112">
-          <caret line="24" selection-start-line="24" selection-end-line="24" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#794#1414#0" expanded="true" />
-            <element signature="e#1413#1414#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/netty-im/src/main/java/com/wjy/advance/CInboundServerHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="18" column="29" selection-start-line="18" selection-start-column="29" selection-end-line="18" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/netty-im/src/main/java/com/wjy/advance/BInboundServerHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="16" column="45" lean-forward="true" selection-start-line="16" selection-start-column="45" selection-end-line="16" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/netty-im/src/main/java/com/wjy/advance/AInboundServerHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="18" column="19" selection-start-line="18" selection-start-column="19" selection-end-line="18" selection-end-column="19" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/netty-im/src/main/java/com/wjy/im2/server/handler/ServerMessageHandler.java" />
-    <entry file="file://$PROJECT_DIR$/netty-im/src/main/java/com/wjy/im2/client/handler/ClientMessageHandler.java" />
-    <entry file="jar://$USER_HOME$/.m2/repository/io/netty/netty-all/4.1.6.Final/netty-all-4.1.6.Final-sources.jar!/io/netty/handler/codec/MessageToByteEncoder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="193">
-          <caret line="45" column="22" selection-start-line="45" selection-start-column="22" selection-end-line="45" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/netty-im/src/main/java/com/wjy/im/server/handler/ServerMessageHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="333">
-          <caret line="49" column="87" lean-forward="true" selection-start-line="44" selection-start-column="11" selection-end-line="49" selection-end-column="87" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/netty-im/src/main/java/com/wjy/im2/server/handler/MessageRequestHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="25" column="59" selection-start-line="25" selection-start-column="59" selection-end-line="25" selection-end-column="59" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://D:/tools/java/jdk1.8.0_211/src.zip!/java/lang/Thread.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="747" column="19" selection-start-line="747" selection-start-column="19" selection-end-line="747" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/netty-im/src/main/java/com/wjy/im/client/handler/ClientMessageHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="387">
-          <caret line="60" column="45" lean-forward="true" selection-start-line="51" selection-start-column="8" selection-end-line="60" selection-end-column="45" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/netty-im/src/main/java/com/wjy/im2/client/handler/MessageResponseHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="21" column="64" selection-start-line="21" selection-start-column="64" selection-end-line="21" selection-end-column="64" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.m2/repository/io/netty/netty-all/4.1.6.Final/netty-all-4.1.6.Final-sources.jar!/io/netty/handler/codec/ByteToMessageCodec.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1326">
-          <caret line="102" column="21" selection-start-line="102" selection-start-column="21" selection-end-line="102" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$USER_HOME$/.m2/repository/io/netty/netty-all/4.1.6.Final/netty-all-4.1.6.Final-sources.jar!/io/netty/handler/codec/FixedLengthFrameDecoder.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="193">
@@ -765,13 +779,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/netty-im/src/main/java/com/wjy/unpack/UnpackClientHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="25" column="33" selection-start-line="25" selection-start-column="33" selection-end-line="25" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://D:/tools/java/jdk1.8.0_211/src.zip!/java/lang/System.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="9486">
@@ -793,23 +800,6 @@
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/netty-im/src/main/java/com/wjy/im2/client/handler/LoginResponseHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="78">
-          <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.m2/repository/io/netty/netty-all/4.1.6.Final/netty-all-4.1.6.Final-sources.jar!/io/netty/handler/codec/ByteToMessageDecoder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="193">
-          <caret line="69" column="22" selection-start-line="69" selection-start-column="22" selection-end-line="69" selection-end-column="22" />
         </state>
       </provider>
     </entry>
@@ -847,42 +837,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/netty-im/src/main/java/com/wjy/im/server/IMessageServer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="32" column="41" lean-forward="true" selection-start-line="32" selection-start-column="34" selection-end-line="32" selection-end-column="52" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1379#1380#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/netty-im/src/main/java/com/wjy/im2/client/IMessageClient.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="41" column="43" selection-start-line="41" selection-start-column="43" selection-end-line="41" selection-end-column="43" />
-          <folding>
-            <element signature="e#2025#2026#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$USER_HOME$/.m2/repository/io/netty/netty-all/4.1.6.Final/netty-all-4.1.6.Final-sources.jar!/io/netty/handler/codec/LengthFieldBasedFrameDecoder.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="184">
           <caret line="341" column="25" selection-start-line="341" selection-start-column="25" selection-end-line="341" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/netty-im/src/main/java/com/wjy/im/client/IMessageClient.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="37" column="66" lean-forward="true" selection-start-line="37" selection-start-column="66" selection-end-line="37" selection-end-column="66" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1507#1508#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -925,13 +883,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://$USER_HOME$/.m2/repository/io/netty/netty-all/4.1.6.Final/netty-all-4.1.6.Final-sources.jar!/io/netty/channel/SimpleChannelInboundHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="47" column="72" lean-forward="true" selection-start-line="47" selection-start-column="72" selection-end-line="47" selection-end-column="72" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://D:/tools/java/jdk1.8.0_211/src.zip!/java/util/concurrent/Executor.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="443">
@@ -953,35 +904,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/netty-im/src/main/java/com/wjy/im2/server/handler/LoginRequestHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="384">
-          <caret line="31" column="24" lean-forward="true" selection-start-line="31" selection-start-column="24" selection-end-line="31" selection-end-column="24" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$USER_HOME$/.m2/repository/io/netty/netty-all/4.1.6.Final/netty-all-4.1.6.Final-sources.jar!/io/netty/channel/ChannelOutboundInvoker.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="184">
           <caret line="207" column="18" selection-start-line="207" selection-start-column="18" selection-end-line="207" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.m2/repository/io/netty/netty-all/4.1.6.Final/netty-all-4.1.6.Final-sources.jar!/io/netty/channel/AbstractChannelHandlerContext.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="759" column="22" lean-forward="true" selection-start-line="759" selection-start-column="22" selection-end-line="759" selection-end-column="22" />
-          <folding>
-            <element signature="e#4727#4728#0" expanded="true" />
-            <element signature="e#4783#4784#0" expanded="true" />
-            <element signature="e#23389#23390#0" expanded="true" />
-            <element signature="e#23436#23437#0" expanded="true" />
-            <element signature="e#26982#26983#0" expanded="true" />
-            <element signature="e#27037#27038#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1011,10 +937,226 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/netty-im/src/main/java/com/wjy/unpack/UnpackClientHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="25" column="33" selection-start-line="25" selection-start-column="33" selection-end-line="25" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/netty-im/src/main/java/com/wjy/im/server/IMessageServer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="32" column="41" lean-forward="true" selection-start-line="32" selection-start-column="34" selection-end-line="32" selection-end-column="52" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1379#1380#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/netty-im/src/main/java/com/wjy/util/LoginUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="188">
+          <caret line="22" column="23" selection-start-line="22" selection-start-column="23" selection-end-line="22" selection-end-column="23" />
+          <folding>
+            <element signature="e#412#413#0" expanded="true" />
+            <element signature="e#468#469#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/netty-im/src/main/java/com/wjy/im2/server/handler/LifeCyCleTestHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-364">
+          <caret line="5" column="33" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="33" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.m2/repository/io/netty/netty-all/4.1.6.Final/netty-all-4.1.6.Final-sources.jar!/io/netty/util/ConstantPool.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="193">
+          <caret line="92" column="13" selection-start-line="92" selection-start-column="13" selection-end-line="92" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.m2/repository/io/netty/netty-all/4.1.6.Final/netty-all-4.1.6.Final-sources.jar!/io/netty/util/AttributeKey.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="327">
+          <caret line="54" column="44" selection-start-line="54" selection-start-column="44" selection-end-line="54" selection-end-column="44" />
+          <folding>
+            <element signature="e#2140#2141#0" expanded="true" />
+            <element signature="e#2203#2204#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/netty-im/src/main/java/com/wjy/util/Attributes.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="17" column="55" selection-start-line="17" selection-start-column="55" selection-end-line="17" selection-end-column="55" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/netty-im/src/main/java/com/wjy/protocol/packet/impl/MessageResponsePacket.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="18" column="32" selection-start-line="18" selection-start-column="32" selection-end-line="18" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/netty-im/src/main/java/com/wjy/protocol/packet/impl/LoginResponsePacket.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="19" column="28" selection-start-line="19" selection-start-column="28" selection-end-line="19" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/netty-im/src/main/java/com/wjy/im/client/IMessageClient.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="62" column="35" lean-forward="true" selection-start-line="62" selection-start-column="35" selection-end-line="62" selection-end-column="35" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/netty-im/src/main/java/com/wjy/im2/session/Session.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="14" selection-start-line="14" selection-end-line="14" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/netty-im/src/main/java/com/wjy/protocol/packet/impl/MessageRequestPacket.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="26">
+          <caret line="17" selection-start-line="17" selection-end-line="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/netty-im/src/main/java/com/wjy/im2/client/handler/LoginResponseHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="282">
+          <caret line="32" selection-start-line="32" selection-end-line="32" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/netty-im/src/main/java/com/wjy/im2/client/handler/MessageResponseHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="23" column="86" selection-start-line="23" selection-start-column="86" selection-end-line="23" selection-end-column="86" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/netty-im/src/main/java/com/wjy/im2/client/IMessageClient.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="93">
+          <caret line="85" column="26" selection-start-line="85" selection-start-column="26" selection-end-line="85" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/netty-im/src/main/java/com/wjy/im2/server/handler/AuthHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="17" column="22" selection-start-line="17" selection-start-column="22" selection-end-line="17" selection-end-column="22" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/netty-im/src/main/java/com/wjy/im2/server/IMessageServer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="268">
-          <caret line="41" column="73" lean-forward="true" selection-start-line="41" selection-start-column="73" selection-end-line="41" selection-end-column="73" />
+        <state relative-caret-position="182">
+          <caret line="53" column="62" lean-forward="true" selection-start-line="53" selection-start-column="62" selection-end-line="53" selection-end-column="62" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://D:/tools/java/jdk1.8.0_211/jre/lib/rt.jar!/sun/nio/ch/WindowsSelectorImpl.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="446" column="27" selection-start-line="446" selection-start-column="27" selection-end-line="446" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/netty-im/src/main/java/com/wjy/im2/server/handler/LoginRequestHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="93">
+          <caret line="23" selection-start-line="23" selection-end-line="23" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1548#1549#0" expanded="true" />
+            <element signature="e#1613#1614#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.m2/repository/io/netty/netty-all/4.1.6.Final/netty-all-4.1.6.Final-sources.jar!/io/netty/channel/SimpleChannelInboundHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="107" selection-start-line="107" selection-end-line="107" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.m2/repository/io/netty/netty-all/4.1.6.Final/netty-all-4.1.6.Final-sources.jar!/io/netty/handler/codec/ByteToMessageDecoder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="93">
+          <caret line="267" selection-start-line="267" selection-end-line="267" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.m2/repository/io/netty/netty-all/4.1.6.Final/netty-all-4.1.6.Final-sources.jar!/io/netty/channel/AbstractChannelHandlerContext.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="93">
+          <caret line="351" selection-start-line="351" selection-end-line="351" />
+          <folding>
+            <element signature="e#4727#4728#0" expanded="true" />
+            <element signature="e#4783#4784#0" expanded="true" />
+            <element signature="e#23389#23390#0" expanded="true" />
+            <element signature="e#23436#23437#0" expanded="true" />
+            <element signature="e#26982#26983#0" expanded="true" />
+            <element signature="e#27037#27038#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/netty-im/src/main/java/com/wjy/im2/server/handler/MessageRequestHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="93">
+          <caret line="38" selection-start-line="38" selection-end-line="38" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/netty-im/src/main/java/com/wjy/im2/session/SessionUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="214">
+          <caret line="53" selection-start-line="53" selection-end-line="53" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1309#1310#0" expanded="true" />
+            <element signature="e#1503#1504#0" expanded="true" />
+            <element signature="e#1548#1549#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

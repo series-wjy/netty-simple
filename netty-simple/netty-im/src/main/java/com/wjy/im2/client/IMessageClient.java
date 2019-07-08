@@ -8,11 +8,10 @@ import com.wjy.im2.client.handler.LoginResponseHandler;
 import com.wjy.im2.client.handler.MessageResponseHandler;
 import com.wjy.im2.coder.PacketDecoder;
 import com.wjy.im2.coder.PacketEncoder;
-import com.wjy.protocol.packet.codec.PacketCodec;
+import com.wjy.im2.session.SessionUtil;
+import com.wjy.protocol.packet.impl.LoginRequestPacket;
 import com.wjy.protocol.packet.impl.MessageRequestPacket;
-import com.wjy.util.LoginUtil;
 import io.netty.bootstrap.Bootstrap;
-import io.netty.buffer.ByteBuf;
 import io.netty.channel.Channel;
 import io.netty.channel.ChannelFuture;
 import io.netty.channel.ChannelInitializer;
@@ -61,19 +60,31 @@ public class IMessageClient {
     }
 
     private static void startConsoleThread(Channel channel) {
+        Scanner sc = new Scanner(System.in);
+        LoginRequestPacket loginRequestPacket = new LoginRequestPacket();
         new Thread(() -> {
             while (!Thread.interrupted()) {
-                if(LoginUtil.hasLogin(channel)) {
-                    System.out.println("输入消息发送至服务端：");
-                    Scanner scanner = new Scanner(System.in);
-                    String line = scanner.nextLine();
+                if(!SessionUtil.hasLogin(channel)) {
+                    System.out.println("请输入用户名登录：");
+                    String userName = sc.nextLine();
+                    loginRequestPacket.setUsername(userName);
+                    loginRequestPacket.setPassword("pwd");
 
-                    MessageRequestPacket messageRequestPacket = new MessageRequestPacket();
-                    messageRequestPacket.setMsg(line);
-                    ByteBuf byteBuf = PacketCodec.getInstance().encode(messageRequestPacket);
-                    channel.writeAndFlush(byteBuf);
+                    channel.writeAndFlush(loginRequestPacket);
+                    waitForLoginResponse();
+               } else {
+                    String toUserId = sc.next();
+                    String message = sc.next();
+                    channel.writeAndFlush(new MessageRequestPacket(toUserId, message));
                 }
             }
         }).start();
+    }
+
+    private static void waitForLoginResponse() {
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException ignored) {
+        }
     }
 }
