@@ -9,6 +9,7 @@ import io.netty.channel.ChannelInitializer;
 import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.nio.NioServerSocketChannel;
 import io.netty.channel.socket.nio.NioSocketChannel;
+import io.netty.util.AttributeKey;
 import io.netty.util.concurrent.Future;
 import io.netty.util.concurrent.GenericFutureListener;
 
@@ -31,6 +32,8 @@ public class AdvanceNettyServer {
                     }
                 });
         bind(serverBootstrap, 1368);
+        serverBootstrap.attr(AttributeKey.newInstance("clientName"), "nettyClient");
+        //serverBootstrap.option();
     }
 
     public static void bind(ServerBootstrap serverBootstrap, int port) {

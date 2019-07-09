@@ -6,6 +6,7 @@ package com.wjy.command.impl;
 
 import com.wjy.command.ConsoleCommand;
 import com.wjy.protocol.packet.impl.SendToUserRequestPacket;
+import com.wjy.util.LogUtil;
 import io.netty.channel.Channel;
 
 import java.util.Date;
@@ -22,7 +23,7 @@ public class SendToUserConsoleCommand implements ConsoleCommand {
         String toUserId = scanner.next();
         String msg = scanner.next();
 
-        System.out.println(new Date() + ":向用户[toUserId:" + toUserId + "]发送消息");
+        LogUtil.print("向用户[toUserId:" + toUserId + "]发送消息");
         sendToUserRequestPacket.setMsg(msg);
         sendToUserRequestPacket.setToUserId(toUserId);
         channel.writeAndFlush(sendToUserRequestPacket);

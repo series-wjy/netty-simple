@@ -8,6 +8,7 @@ import com.wjy.im2.session.Session;
 import com.wjy.im2.session.SessionUtil;
 import com.wjy.protocol.packet.impl.SendToUserRequestPacket;
 import com.wjy.protocol.packet.impl.SendToUserResponsePacket;
+import com.wjy.util.LogUtil;
 import io.netty.channel.Channel;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.SimpleChannelInboundHandler;
@@ -21,7 +22,7 @@ import java.util.Date;
 public class SendToUserRequestHandler extends SimpleChannelInboundHandler<SendToUserRequestPacket> {
     @Override
     protected void channelRead0(ChannelHandlerContext ctx, SendToUserRequestPacket msg) throws Exception {
-        System.out.println(new Date() + "：服务端收到消息[" + msg.getMsg() + "]");
+        LogUtil.print("服务端收到消息[" + msg.getMsg() + "]");
 
         // 1、获取消息发送方的会话信息
         Session session = SessionUtil.getSession(ctx.channel());

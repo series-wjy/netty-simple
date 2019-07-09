@@ -6,11 +6,13 @@ package com.wjy.im2.client;
 
 import com.wjy.command.impl.ConsoleCommandMannager;
 import com.wjy.command.impl.LoginConsoleCommand;
+import com.wjy.im2.client.handler.CreateGroupResponseHandler;
 import com.wjy.im2.client.handler.LoginResponseHandler;
-import com.wjy.im2.client.handler.MessageResponseHandler;
+import com.wjy.im2.client.handler.SendToUserResponseHandler;
 import com.wjy.im2.coder.PacketDecoder;
 import com.wjy.im2.coder.PacketEncoder;
 import com.wjy.im2.session.SessionUtil;
+import com.wjy.util.LogUtil;
 import io.netty.bootstrap.Bootstrap;
 import io.netty.channel.Channel;
 import io.netty.channel.ChannelFuture;
@@ -44,17 +46,18 @@ public class IMessageClient {
                         ch.pipeline().addLast(new LengthFieldBasedFrameDecoder(Integer.MAX_VALUE, 7,4));
                         ch.pipeline().addLast(new PacketDecoder());
                         ch.pipeline().addLast(new LoginResponseHandler());
-                        ch.pipeline().addLast(new MessageResponseHandler());
+                        ch.pipeline().addLast(new SendToUserResponseHandler());
+                        ch.pipeline().addLast(new CreateGroupResponseHandler());
                         ch.pipeline().addLast(new PacketEncoder());
                     }
                 });
         bootstrap.connect("127.0.0.1", 8000).addListener(future -> {
             if(future.isSuccess()) {
-                System.out.println(new Date() + "：连接[127.0.0.1:8000]成功！");
+                LogUtil.print("连接[127.0.0.1:8000]成功！");
                 Channel channel = ((ChannelFuture)future).channel();
                 startConsoleThread(channel);
             } else {
-                System.out.println(new Date() + "：连接[127.0.0.1:8000]失败！");
+                LogUtil.print("连接[127.0.0.1:8000]失败！");
             }
         });
     }

@@ -8,11 +8,10 @@ import com.wjy.im2.session.Session;
 import com.wjy.im2.session.SessionUtil;
 import com.wjy.protocol.packet.impl.LoginRequestPacket;
 import com.wjy.protocol.packet.impl.LoginResponsePacket;
+import com.wjy.util.IDUtil;
+import com.wjy.util.LogUtil;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.SimpleChannelInboundHandler;
-
-import java.util.Date;
-import java.util.UUID;
 
 /**
  * @author wangjiayou 2019/7/3
@@ -21,9 +20,9 @@ import java.util.UUID;
 public class LoginRequestHandler extends SimpleChannelInboundHandler<LoginRequestPacket> {
     @Override
     protected void channelRead0(ChannelHandlerContext ctx, LoginRequestPacket msg) throws Exception {
-        System.out.println(new Date() + "：服务端接受登录消息......");
+        LogUtil.print("服务端接受登录消息");
 
-        String userId = randomUserId();
+        String userId = IDUtil.randomId();
 
         LoginResponsePacket loginResponsePacket = new LoginResponsePacket();
         loginResponsePacket.setUserId(userId);
@@ -42,10 +41,6 @@ public class LoginRequestHandler extends SimpleChannelInboundHandler<LoginReques
 
     private boolean valid(LoginRequestPacket packet) {
         return true;
-    }
-
-    private static String randomUserId() {
-        return UUID.randomUUID().toString().split("-")[0];
     }
 
     @Override

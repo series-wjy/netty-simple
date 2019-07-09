@@ -6,6 +6,7 @@ package com.wjy.command.impl;
 
 import com.wjy.command.ConsoleCommand;
 import com.wjy.protocol.packet.impl.CreateGroupRequestPacket;
+import com.wjy.util.LogUtil;
 import io.netty.channel.Channel;
 
 import java.util.Arrays;
@@ -22,7 +23,7 @@ public class CreateUserGroupConsoleCommand implements ConsoleCommand {
     public void exec(Scanner scanner, Channel channel) {
         CreateGroupRequestPacket createGroupRequestPacket = new CreateGroupRequestPacket();
 
-        System.out.println("【拉人群聊】输入 userId 列表，userId 之间英文逗号隔开：");
+        LogUtil.print("【拉人群聊】输入 userId 列表，userId 之间英文逗号隔开：");
 
         String userIds = scanner.next();
         String groupName = scanner.next();

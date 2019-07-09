@@ -7,6 +7,7 @@ package com.wjy.im2.client.handler;
 import com.wjy.im2.session.Session;
 import com.wjy.im2.session.SessionUtil;
 import com.wjy.protocol.packet.impl.LoginResponsePacket;
+import com.wjy.util.LogUtil;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.SimpleChannelInboundHandler;
 
@@ -31,15 +32,15 @@ public class LoginResponseHandler extends SimpleChannelInboundHandler<LoginRespo
     @Override
     protected void channelRead0(ChannelHandlerContext ctx, LoginResponsePacket msg) throws Exception {
         if(msg.isSuccess()) {
-            System.out.println(new Date() + "：客户端登录成功[userId：" + msg.getUserId() + "]");
+            LogUtil.print("客户端登录成功[userId：" + msg.getUserId() + "]");
             SessionUtil.bindSession(new Session(msg.getUserId(), msg.getUserName()), ctx.channel());
         } else {
-            System.out.println(new Date() + ": 客户端登录失败，原因：" + msg.getReason());
+            LogUtil.print(":客户端登录失败，原因：" + msg.getReason());
         }
     }
 
     @Override
     public void channelInactive(ChannelHandlerContext ctx) throws Exception {
-        System.out.println("客户端连接被关闭!");
+        LogUtil.print("客户端连接被关闭!");
     }
 }
