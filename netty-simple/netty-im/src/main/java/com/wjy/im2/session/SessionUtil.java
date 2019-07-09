@@ -7,6 +7,7 @@ package com.wjy.im2.session;
 
 import com.wjy.util.Attributes;
 import io.netty.channel.Channel;
+
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
@@ -17,6 +18,8 @@ import java.util.concurrent.ConcurrentHashMap;
 public class SessionUtil {
 
     private static Map<String, Channel> sessionMap = new ConcurrentHashMap<>();
+
+    private static Map<String, Group> groupMap = new ConcurrentHashMap<>();
 
     /**
      * 绑定session
@@ -44,6 +47,38 @@ public class SessionUtil {
             channel.attr(Attributes.SESSION).set(null);
         }
 
+    }
+
+    /**
+     * 加入群聊
+     * @auther wangjiayou
+     * @date 2019/7/9
+     * @param group
+     * @param channel
+     * @return void
+     */
+    public static void addGroup(Group group, Channel channel) {
+        if(hasLogin(channel)) {
+            groupMap.put(group.getGroupId(), group);
+        }
+    }
+
+    /**
+     * 退出群聊
+     * @auther wangjiayou
+     * @date 2019/7/9
+     * @param group
+     * @param channel
+     * @return void
+     */
+    public static void exitGroup(Group group, Channel channel) {
+        if(hasLogin(channel)) {
+            groupMap.remove(group.getGroupId());
+        }
+    }
+
+    public static Group getGroup(String groupId) {
+        return groupMap.get(groupId);
     }
 
     public static Session getSession(Channel channel) {

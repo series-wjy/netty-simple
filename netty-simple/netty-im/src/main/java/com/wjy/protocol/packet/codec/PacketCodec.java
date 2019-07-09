@@ -5,10 +5,16 @@
 package com.wjy.protocol.packet.codec;
 
 import com.wjy.protocol.packet.Packet;
+import com.wjy.protocol.packet.impl.CreateGroupRequestPacket;
+import com.wjy.protocol.packet.impl.CreateGroupResponsePacket;
 import com.wjy.protocol.packet.impl.LoginRequestPacket;
 import com.wjy.protocol.packet.impl.LoginResponsePacket;
-import com.wjy.protocol.packet.impl.MessageRequestPacket;
-import com.wjy.protocol.packet.impl.MessageResponsePacket;
+import com.wjy.protocol.packet.impl.LogoutRequestPacket;
+import com.wjy.protocol.packet.impl.LogoutResponsePacket;
+import com.wjy.protocol.packet.impl.SendToGroupRequestPacket;
+import com.wjy.protocol.packet.impl.SendToGroupResponsePacket;
+import com.wjy.protocol.packet.impl.SendToUserRequestPacket;
+import com.wjy.protocol.packet.impl.SendToUserResponsePacket;
 import com.wjy.protocol.serialize.Serializer;
 import com.wjy.protocol.serialize.impl.JSONSerializer;
 import io.netty.buffer.ByteBuf;
@@ -17,10 +23,16 @@ import io.netty.buffer.ByteBufAllocator;
 import java.util.HashMap;
 import java.util.Map;
 
+import static com.wjy.protocol.command.Command.CREATE_GROUP_REQUEST;
+import static com.wjy.protocol.command.Command.CREATE_GROUP_RESPONSE;
 import static com.wjy.protocol.command.Command.LOGIN_REQUEST;
 import static com.wjy.protocol.command.Command.LOGIN_RESPONSE;
-import static com.wjy.protocol.command.Command.MESSAGE_REQUEST;
-import static com.wjy.protocol.command.Command.MESSAGE_RESPONSE;
+import static com.wjy.protocol.command.Command.LOGOUT_REQUEST;
+import static com.wjy.protocol.command.Command.LOGOUT_RESPONSE;
+import static com.wjy.protocol.command.Command.SEND_TO_GROUP_REQUEST;
+import static com.wjy.protocol.command.Command.SEND_TO_GROUP_RESPONSE;
+import static com.wjy.protocol.command.Command.SEND_TO_USER_REQUEST;
+import static com.wjy.protocol.command.Command.SEND_TO_USER_RESPONSE;
 
 /**
  * @author wangjiayou 2019/7/1
@@ -49,8 +61,16 @@ public class PacketCodec {
         packetTypeMap = new HashMap<>();
         packetTypeMap.put(LOGIN_REQUEST, LoginRequestPacket.class);
         packetTypeMap.put(LOGIN_RESPONSE, LoginResponsePacket.class);
-        packetTypeMap.put(MESSAGE_REQUEST, MessageRequestPacket.class);
-        packetTypeMap.put(MESSAGE_RESPONSE, MessageResponsePacket.class);
+        //packetTypeMap.put(MESSAGE_REQUEST, MessageRequestPacket.class);
+        //packetTypeMap.put(MESSAGE_RESPONSE, MessageResponsePacket.class);
+        packetTypeMap.put(CREATE_GROUP_REQUEST, CreateGroupRequestPacket.class);
+        packetTypeMap.put(CREATE_GROUP_RESPONSE, CreateGroupResponsePacket.class);
+        packetTypeMap.put(SEND_TO_USER_REQUEST, SendToUserRequestPacket.class);
+        packetTypeMap.put(SEND_TO_USER_RESPONSE, SendToUserResponsePacket.class);
+        packetTypeMap.put(LOGOUT_REQUEST, LogoutRequestPacket.class);
+        packetTypeMap.put(LOGOUT_RESPONSE, LogoutResponsePacket.class);
+        packetTypeMap.put(SEND_TO_GROUP_REQUEST, SendToGroupRequestPacket.class);
+        packetTypeMap.put(SEND_TO_GROUP_RESPONSE, SendToGroupResponsePacket.class);
 
         serializerMap = new HashMap<>();
         Serializer serializer = new JSONSerializer();

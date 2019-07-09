@@ -4,13 +4,13 @@
  */
 package com.wjy.im2.client;
 
+import com.wjy.command.impl.ConsoleCommandMannager;
+import com.wjy.command.impl.LoginConsoleCommand;
 import com.wjy.im2.client.handler.LoginResponseHandler;
 import com.wjy.im2.client.handler.MessageResponseHandler;
 import com.wjy.im2.coder.PacketDecoder;
 import com.wjy.im2.coder.PacketEncoder;
 import com.wjy.im2.session.SessionUtil;
-import com.wjy.protocol.packet.impl.LoginRequestPacket;
-import com.wjy.protocol.packet.impl.MessageRequestPacket;
 import io.netty.bootstrap.Bootstrap;
 import io.netty.channel.Channel;
 import io.netty.channel.ChannelFuture;
@@ -61,30 +61,17 @@ public class IMessageClient {
 
     private static void startConsoleThread(Channel channel) {
         Scanner sc = new Scanner(System.in);
-        LoginRequestPacket loginRequestPacket = new LoginRequestPacket();
+        ConsoleCommandMannager mannager = new ConsoleCommandMannager();
+        LoginConsoleCommand loginConsoleCommand = new LoginConsoleCommand();
+
         new Thread(() -> {
             while (!Thread.interrupted()) {
                 if(!SessionUtil.hasLogin(channel)) {
-                    System.out.println("请输入用户名登录：");
-                    String userName = sc.nextLine();
-                    loginRequestPacket.setUsername(userName);
-                    loginRequestPacket.setPassword("pwd");
-
-                    channel.writeAndFlush(loginRequestPacket);
-                    waitForLoginResponse();
+                    loginConsoleCommand.exec(sc, channel);
                } else {
-                    String toUserId = sc.next();
-                    String message = sc.next();
-                    channel.writeAndFlush(new MessageRequestPacket(toUserId, message));
+                    mannager.exec(sc, channel);
                 }
             }
         }).start();
-    }
-
-    private static void waitForLoginResponse() {
-        try {
-            Thread.sleep(3000);
-        } catch (InterruptedException ignored) {
-        }
     }
 }

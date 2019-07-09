@@ -8,7 +8,7 @@ import com.wjy.im2.coder.PacketDecoder;
 import com.wjy.im2.coder.PacketEncoder;
 import com.wjy.im2.server.handler.AuthHandler;
 import com.wjy.im2.server.handler.LoginRequestHandler;
-import com.wjy.im2.server.handler.MessageRequestHandler;
+import com.wjy.im2.server.handler.SendToUserRequestHandler;
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.ChannelInitializer;
 import io.netty.channel.ChannelOption;
@@ -45,7 +45,7 @@ public class IMessageServer {
 
                         // 用户登录验证
                         ch.pipeline().addLast(new AuthHandler());
-                        ch.pipeline().addLast(new MessageRequestHandler());
+                        ch.pipeline().addLast(new SendToUserRequestHandler());
                         ch.pipeline().addLast(new PacketEncoder());
                     }
                 });
