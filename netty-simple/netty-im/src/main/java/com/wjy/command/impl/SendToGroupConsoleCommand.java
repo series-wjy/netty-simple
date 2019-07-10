@@ -5,12 +5,10 @@
 package com.wjy.command.impl;
 
 import com.wjy.command.ConsoleCommand;
-import com.wjy.im2.session.SessionUtil;
 import com.wjy.protocol.packet.impl.SendToGroupRequestPacket;
 import com.wjy.util.LogUtil;
 import io.netty.channel.Channel;
 
-import java.util.Date;
 import java.util.Scanner;
 
 /**
@@ -23,9 +21,9 @@ public class SendToGroupConsoleCommand implements ConsoleCommand {
         SendToGroupRequestPacket sendToGroupRequestPacket = new SendToGroupRequestPacket();
         String groupId = scanner.next();
         String msg = scanner.next();
-        String groupName = SessionUtil.getGroup(groupId).getGroupName();
+//        String groupName = SessionUtil.getGroup(groupId).getGroupName();
 
-        LogUtil.print("向群[grouId:" + groupId + " groupName:" + groupName + "]发送消息");
+        LogUtil.print("向群[grouId:" + groupId + "]发送消息");
         sendToGroupRequestPacket.setGroupId(groupId);
         sendToGroupRequestPacket.setMsg(msg);
 

@@ -8,6 +8,7 @@ import com.wjy.im2.coder.PacketDecoder;
 import com.wjy.im2.coder.PacketEncoder;
 import com.wjy.im2.server.handler.AuthHandler;
 import com.wjy.im2.server.handler.CreateGroupHandler;
+import com.wjy.im2.server.handler.GroupMemebersHandler;
 import com.wjy.im2.server.handler.LoginRequestHandler;
 import com.wjy.im2.server.handler.SendToUserRequestHandler;
 import com.wjy.util.LogUtil;
@@ -18,8 +19,6 @@ import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.nio.NioServerSocketChannel;
 import io.netty.channel.socket.nio.NioSocketChannel;
 import io.netty.handler.codec.LengthFieldBasedFrameDecoder;
-
-import java.util.Date;
 
 /**
  * @author wangjiayou 2019/7/2
@@ -48,6 +47,7 @@ public class IMessageServer {
                         // 用户登录验证
                         ch.pipeline().addLast(new AuthHandler());
                         ch.pipeline().addLast(new SendToUserRequestHandler());
+                        ch.pipeline().addLast(new GroupMemebersHandler());
                         ch.pipeline().addLast(new CreateGroupHandler());
                         ch.pipeline().addLast(new PacketEncoder());
                     }

@@ -14,7 +14,7 @@ import io.netty.channel.group.DefaultChannelGroup;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CreateGroupHandler extends SimpleChannelInboundHandler<CreateGroupRequestPacket> {
+public class    CreateGroupHandler extends SimpleChannelInboundHandler<CreateGroupRequestPacket> {
     @Override
     protected void channelRead0(ChannelHandlerContext ctx, CreateGroupRequestPacket createGroupRequestPacket) throws Exception {
         List<String> userIds = createGroupRequestPacket.getUserIds();
@@ -40,10 +40,12 @@ public class CreateGroupHandler extends SimpleChannelInboundHandler<CreateGroupR
         createGroupResponsePacket.setGroupId(IDUtil.randomId());
         createGroupResponsePacket.setUserNames(userNames);
 
+        SessionUtil.setChannelGroup(createGroupResponsePacket.getGroupId(), group);
+
         // 4、给群聊的每个成员发送创建成功响应
         group.writeAndFlush(createGroupResponsePacket);
 
-        LogUtil.print("群创建成功[groupId:" + createGroupResponsePacket.getGroupId() + "]");
-        LogUtil.print("群成员包括[" + createGroupResponsePacket.getUserNames() + "]");
+        LogUtil.print("群创建成功[groupId:" + createGroupResponsePacket.getGroupId() + "]群成员包括"
+                + createGroupResponsePacket.getUserNames());
     }
 }

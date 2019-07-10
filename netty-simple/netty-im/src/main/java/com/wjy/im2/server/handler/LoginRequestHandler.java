@@ -28,12 +28,14 @@ public class LoginRequestHandler extends SimpleChannelInboundHandler<LoginReques
         loginResponsePacket.setUserId(userId);
         loginResponsePacket.setVersion(msg.getVersion());
         if(valid(msg)) {
+            LogUtil.print("用户[userName:" + msg.getUsername() + "]登录成功");
             loginResponsePacket.setSuccess(true);
             // 登录成功标识
             SessionUtil.bindSession(new Session(userId, msg.getUsername()), ctx.channel());
         } else {
             loginResponsePacket.setSuccess(false);
             loginResponsePacket.setReason("账号或密码效验失败！");
+            LogUtil.print("用户[userName:" + msg.getUsername() + "]登录失败");
         }
         ctx.channel().writeAndFlush(loginResponsePacket);
         //ctx.channel().write(loginResponsePacket); // 批量发送，速度更快
