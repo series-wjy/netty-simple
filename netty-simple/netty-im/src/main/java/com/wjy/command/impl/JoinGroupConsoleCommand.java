@@ -20,7 +20,7 @@ public class JoinGroupConsoleCommand implements ConsoleCommand {
     public void exec(Scanner scanner, Channel channel) {
         JoinGroupRequestPacket joinGroupRequestPacket = new JoinGroupRequestPacket();
         LogUtil.print("加入群聊");
-        String groupId = scanner.nextLine();
+        String groupId = scanner.next();
         joinGroupRequestPacket.setGroupId(groupId);
 
         channel.writeAndFlush(joinGroupRequestPacket);

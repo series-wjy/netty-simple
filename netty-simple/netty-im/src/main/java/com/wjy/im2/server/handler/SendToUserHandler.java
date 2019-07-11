@@ -10,16 +10,23 @@ import com.wjy.protocol.packet.impl.SendToUserRequestPacket;
 import com.wjy.protocol.packet.impl.SendToUserResponsePacket;
 import com.wjy.util.LogUtil;
 import io.netty.channel.Channel;
+import io.netty.channel.ChannelHandler;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.SimpleChannelInboundHandler;
-
-import java.util.Date;
 
 /**
  * @author wangjiayou 2019/7/3
  * @version ORAS v1.0
  */
-public class SendToUserRequestHandler extends SimpleChannelInboundHandler<SendToUserRequestPacket> {
+@ChannelHandler.Sharable
+public class SendToUserHandler extends SimpleChannelInboundHandler<SendToUserRequestPacket> {
+
+    public static final SendToUserHandler INSTANCE = new SendToUserHandler();
+
+    private SendToUserHandler() {
+
+    }
+
     @Override
     protected void channelRead0(ChannelHandlerContext ctx, SendToUserRequestPacket msg) throws Exception {
         LogUtil.print("服务端收到消息[" + msg.getMsg() + "]");
@@ -37,11 +44,11 @@ public class SendToUserRequestHandler extends SimpleChannelInboundHandler<SendTo
         Channel toUserChannel = SessionUtil.getChannel(msg.getToUserId());
 
         // 4、将消息转发给消息接收方
-        if(SessionUtil.hasLogin(toUserChannel)) {
+        if(toUserChannel != null && SessionUtil.hasLogin(toUserChannel)) {
             toUserChannel.writeAndFlush(sendToUserResponsePacket);
         } else {
             sendToUserResponsePacket.setMsg("对方不在线，请稍后重试！");
-            ctx.channel().writeAndFlush(sendToUserResponsePacket);
+            ctx.writeAndFlush(sendToUserResponsePacket);
         }
     }
 }

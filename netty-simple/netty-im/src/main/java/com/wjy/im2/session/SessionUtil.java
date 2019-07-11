@@ -61,6 +61,10 @@ public class SessionUtil {
         return groupMap.get(groupId);
     }
 
+    public static ChannelGroup cleanGroupInfo(String groupId) {
+        return groupMap.remove(groupId);
+    }
+
     public static ChannelGroup setChannelGroup(String groupId, ChannelGroup channelGroup) {
         return groupMap.put(groupId, channelGroup);
     }

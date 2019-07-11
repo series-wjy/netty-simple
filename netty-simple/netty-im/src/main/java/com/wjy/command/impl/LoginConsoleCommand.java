@@ -9,7 +9,6 @@ import com.wjy.protocol.packet.impl.LoginRequestPacket;
 import com.wjy.util.LogUtil;
 import io.netty.channel.Channel;
 
-import java.util.Date;
 import java.util.Scanner;
 
 /**
@@ -21,7 +20,7 @@ public class LoginConsoleCommand implements ConsoleCommand {
     public void exec(Scanner scanner, Channel channel) {
         LoginRequestPacket loginRequestPacket = new LoginRequestPacket();
         LogUtil.print("用户登录");
-        String userName = scanner.nextLine();
+        String userName = scanner.next();
         loginRequestPacket.setUsername(userName);
         loginRequestPacket.setPassword("pwd");
 

@@ -16,6 +16,10 @@ import lombok.Data;
 public class SendToGroupRequestPacket extends Packet {
     private String groupId;
 
+    private String fromUserId;
+
+    private String fromUserName;
+
     private String msg;
 
     @Override

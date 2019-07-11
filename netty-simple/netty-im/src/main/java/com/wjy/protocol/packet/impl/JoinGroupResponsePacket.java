@@ -18,6 +18,10 @@ public class JoinGroupResponsePacket extends Packet {
 
     private String groupName;
 
+    private String joinUserId;
+
+    private String joinUserName;
+
     private boolean success;
 
     @Override

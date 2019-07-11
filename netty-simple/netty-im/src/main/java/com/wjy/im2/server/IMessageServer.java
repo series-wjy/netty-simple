@@ -4,13 +4,12 @@
  */
 package com.wjy.im2.server;
 
-import com.wjy.im2.coder.PacketDecoder;
-import com.wjy.im2.coder.PacketEncoder;
 import com.wjy.im2.server.handler.AuthHandler;
-import com.wjy.im2.server.handler.CreateGroupHandler;
-import com.wjy.im2.server.handler.GroupMemebersHandler;
+import com.wjy.im2.server.handler.IMHandler;
 import com.wjy.im2.server.handler.LoginRequestHandler;
-import com.wjy.im2.server.handler.SendToUserRequestHandler;
+import com.wjy.im2.server.handler.PacketCodecHandler;
+import com.wjy.im2.server.handler.TestOutBoundHandler;
+import com.wjy.im2.server.handler.TestOutBoundHandler2;
 import com.wjy.util.LogUtil;
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.ChannelInitializer;
@@ -41,15 +40,17 @@ public class IMessageServer {
                     protected void initChannel(NioSocketChannel ch) throws Exception {
                         //ch.pipeline().addLast(new LifeCyCleTestHandler());
                         ch.pipeline().addLast(new LengthFieldBasedFrameDecoder(Integer.MAX_VALUE, 7,4));
-                        ch.pipeline().addLast(new PacketDecoder());
-                        ch.pipeline().addLast(new LoginRequestHandler());
+                        //ch.pipeline().addLast(new PacketDecoder());
+                        ch.pipeline().addLast(PacketCodecHandler.INSTANCE);
+                        ch.pipeline().addLast(LoginRequestHandler.INSTANCE);
 
                         // 用户登录验证
                         ch.pipeline().addLast(new AuthHandler());
-                        ch.pipeline().addLast(new SendToUserRequestHandler());
-                        ch.pipeline().addLast(new GroupMemebersHandler());
-                        ch.pipeline().addLast(new CreateGroupHandler());
-                        ch.pipeline().addLast(new PacketEncoder());
+                        // 单例模式，客户端共享handler
+                        ch.pipeline().addLast(IMHandler.INSTANCE);
+                        ch.pipeline().addLast(new TestOutBoundHandler());
+                        ch.pipeline().addLast(new TestOutBoundHandler2());
+                        //ch.pipeline().addLast(new PacketEncoder());
                     }
                 });
         serverBootstrap.bind(8000).addListener(future -> {

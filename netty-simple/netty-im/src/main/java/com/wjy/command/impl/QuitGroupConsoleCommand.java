@@ -20,7 +20,7 @@ public class QuitGroupConsoleCommand implements ConsoleCommand {
     public void exec(Scanner scanner, Channel channel) {
         QuitGroupRequestPacket quitGroupRequestPacket = new QuitGroupRequestPacket();
         LogUtil.print("退出群聊");
-        String groupId = scanner.nextLine();
+        String groupId = scanner.next();
         quitGroupRequestPacket.setGroupId(groupId);
 
         channel.writeAndFlush(quitGroupRequestPacket);

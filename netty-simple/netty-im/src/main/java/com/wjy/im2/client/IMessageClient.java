@@ -7,7 +7,11 @@ package com.wjy.im2.client;
 import com.wjy.command.impl.ConsoleCommandMannager;
 import com.wjy.command.impl.LoginConsoleCommand;
 import com.wjy.im2.client.handler.CreateGroupResponseHandler;
+import com.wjy.im2.client.handler.GroupMembersResponseHandler;
+import com.wjy.im2.client.handler.JoinGroupResponseHandler;
 import com.wjy.im2.client.handler.LoginResponseHandler;
+import com.wjy.im2.client.handler.QuitGroupResponseHandler;
+import com.wjy.im2.client.handler.SendToGroupResponseHandler;
 import com.wjy.im2.client.handler.SendToUserResponseHandler;
 import com.wjy.im2.coder.PacketDecoder;
 import com.wjy.im2.coder.PacketEncoder;
@@ -23,7 +27,6 @@ import io.netty.channel.socket.SocketChannel;
 import io.netty.channel.socket.nio.NioSocketChannel;
 import io.netty.handler.codec.LengthFieldBasedFrameDecoder;
 
-import java.util.Date;
 import java.util.Scanner;
 
 /**
@@ -48,6 +51,10 @@ public class IMessageClient {
                         ch.pipeline().addLast(new LoginResponseHandler());
                         ch.pipeline().addLast(new SendToUserResponseHandler());
                         ch.pipeline().addLast(new CreateGroupResponseHandler());
+                        ch.pipeline().addLast(new GroupMembersResponseHandler());
+                        ch.pipeline().addLast(new JoinGroupResponseHandler());
+                        ch.pipeline().addLast(new QuitGroupResponseHandler());
+                        ch.pipeline().addLast(new SendToGroupResponseHandler());
                         ch.pipeline().addLast(new PacketEncoder());
                     }
                 });

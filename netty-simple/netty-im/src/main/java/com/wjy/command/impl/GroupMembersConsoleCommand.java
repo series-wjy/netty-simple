@@ -20,7 +20,7 @@ public class GroupMembersConsoleCommand implements ConsoleCommand {
     public void exec(Scanner scanner, Channel channel) {
         GroupMembersRequestPacket groupMemebersRequestPacket = new GroupMembersRequestPacket();
         LogUtil.print("获取群成员列表");
-        String groupId = scanner.nextLine();
+        String groupId = scanner.next();
         groupMemebersRequestPacket.setGroupId(groupId);
 
         channel.writeAndFlush(groupMemebersRequestPacket);

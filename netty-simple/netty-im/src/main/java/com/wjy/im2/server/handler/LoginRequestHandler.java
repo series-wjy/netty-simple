@@ -10,6 +10,7 @@ import com.wjy.protocol.packet.impl.LoginRequestPacket;
 import com.wjy.protocol.packet.impl.LoginResponsePacket;
 import com.wjy.util.IDUtil;
 import com.wjy.util.LogUtil;
+import io.netty.channel.ChannelHandler;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.SimpleChannelInboundHandler;
 
@@ -17,7 +18,13 @@ import io.netty.channel.SimpleChannelInboundHandler;
  * @author wangjiayou 2019/7/3
  * @version ORAS v1.0
  */
+@ChannelHandler.Sharable
 public class LoginRequestHandler extends SimpleChannelInboundHandler<LoginRequestPacket> {
+    public static final LoginRequestHandler INSTANCE = new LoginRequestHandler();
+
+    private LoginRequestHandler() {
+
+    }
     @Override
     protected void channelRead0(ChannelHandlerContext ctx, LoginRequestPacket msg) throws Exception {
         LogUtil.print("服务端接受登录消息");
